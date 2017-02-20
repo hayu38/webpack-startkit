@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <p>宣言的レンダリング</p>
+        <div id="app-1">
+            {{ message }}
+        </div>
+        
+        <p>v-bind</p>
+        <div id="app-2">
+            <span v-bind:title="message">
+                Hover your mouse over me for a few seconds to see my dynamically bound title!
+            </span>
+        </div>
+        
+        <p>v-if</p>
+        <div id="app-3">
+            <span v-if="seen">
+                Now you see me
+            </span>
+        </div>
+
+        <p>v-for</p>
+        <div id="app-4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+        
+        <p>v-on</p>
+        <div id="app-5">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">
+                Reverse Message
+            </button>
+        </div>
+
+        <p>v-model</p>
+        <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model="message" />
+        </div>
+        
+        <p>component</p>
+        <div id="app-7">
+            <ol>
+                <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+            </ol>
+        </div>
+
+        
+        <script type="text/javascript" src="../build/bundle.js"></script>
+    </body>
+</html>
